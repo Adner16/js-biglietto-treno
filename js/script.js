@@ -4,16 +4,13 @@ console.log('JS OK')
 1 chiedere numero di kilometri
 2 eta del passeggero
 3 calcolare costo biglietto
-4 calcolare sconto
-5 applicare sconto
- mostrare prezzo finale
+4 calcolare sconto e applicare sconto
+5 mostrare prezzo finale
 */
 
 
 //0
 
-let discountYoung
-let discountSenior
 let finalPrice
 
 //1
@@ -29,19 +26,29 @@ const ticketPrice = userKm * 0.21
 console.log(`costo biglietto:${ticketPrice}`)
 
 //4
-discountYoung = ticketPrice * 0.20
-console.log(`sconto young: ${discountYoung}`)
-discountSenior = ticketPrice * 0.40
-console.log (`sconto senior: ${discountSenior}`)
 
-//5
 if (userAge < 18) {
+    const discountYoung = ticketPrice * 0.20
+    console.log(`sconto young: ${discountYoung}`)
     finalPrice = (ticketPrice - discountYoung)
+    console.log(`prezzo scontato young: ${finalPrice}`)
 }
-console.log(`prezzo scontato young: ${finalPrice}`)
-if(userAge >= 65) {
-    finalPrice = (ticketPrice - discountSenior)
-}
-console.log(`prezzo scontato senior: ${finalPrice}`)
+else if (userAge >= 65) {
 
-finalPrice = document.getElementById('prezzo')
+    const discountSenior = ticketPrice * 0.40
+    console.log (`sconto senior: ${discountSenior}`)
+    finalPrice = (ticketPrice - discountSenior)
+    console.log(`prezzo scontato senior: ${finalPrice}`)
+}
+else {
+    finalPrice = ticketPrice
+    console.log (`prezzo senza sconto: ${finalPrice}`)
+}
+
+// 5 
+
+const prezzo = document.getElementById('prezzo')
+parseFloat(num).toFixed(2);
+
+
+prezzo.innerHTML = finalPrice     
