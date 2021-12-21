@@ -18,29 +18,30 @@ let finalPrice
 
 //1
 const userKm = prompt('Per quanti km vuoi viaggiare?');
-console.log('km di viaggio: ' userKm );
+console.log(`km di viaggio: ${userKm} `);
 
 //2
 const userAge = prompt('Quanti anni hai?');
-console.log(userAge);
+console.log(`età del cliente:${userAge}`);
 
 //3
 const ticketPrice = userKm * 0.21
-console.log(ticketPrice)
+console.log(`costo biglietto:${ticketPrice}`)
 
 //4
 discountYoung = ticketPrice * 0.20
-console.log(discountYoung)
+console.log(`sconto young: ${discountYoung}`)
 discountSenior = ticketPrice * 0.40
-console.log (discountSenior)
+console.log (`sconto senior: ${discountSenior}`)
 
 //5
 if (userAge < 18) {
     finalPrice = (ticketPrice - discountYoung)
 }
-// console.log(finalPrice)
+console.log(`prezzo scontato young: ${finalPrice}`)
 if(userAge >= 65) {
     finalPrice = (ticketPrice - discountSenior)
 }
-console.log(finalPrice)
+console.log(`prezzo scontato senior: ${finalPrice}`)
 
+finalPrice = document.getElementById('prezzo')
